@@ -43,4 +43,4 @@ $(OBJS): Makefile $(HEADERS) | $(PATH_OBJS)
 $(PATH_OBJS):
 	mkdir $@
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
