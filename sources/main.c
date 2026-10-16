@@ -1,0 +1,28 @@
+#include "ft_nmap.h"
+
+int main(int argc, char **argv)
+{
+    if (argc == 1)
+        print_help();
+
+    t_nmap_data data = {0};
+    parse_args(argc, argv, &data);
+
+    // DEBUG
+    const char *options[] =
+    {
+        "Help", "Port", "IP", "File", "Speed", "Scan"
+    };
+    printf("\n\n");
+    for (int i = OPT_PORT; i < NB_OPT; i += 1)
+    {
+        printf("%7s = %s\n", options[i], data.args_pointer[i]);
+    }
+    printf("\n\n");
+    for (int i = 0; i < NB_OPT; i++)
+    {
+        printf("%7s : %s\n", options[i], data.options[i] ? "True": "False");
+    }
+    // END DEBUG
+    return 0;
+}
