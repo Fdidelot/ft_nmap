@@ -5,6 +5,7 @@
 # include <stdlib.h>
 # include <getopt.h>
 # include <stdbool.h>
+# include <string.h>
 
 enum
 {
