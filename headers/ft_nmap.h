@@ -6,6 +6,15 @@
 # include <getopt.h>
 # include <stdbool.h>
 # include <string.h>
+# include <stdarg.h>
+
+enum
+{
+    INVALID_OPTION,
+    ARGUMENT_REQUIRED,
+    INVALID_ARGUMENT,
+    INVALID_ARG_VALUE
+};
 
 enum
 {
@@ -25,9 +34,11 @@ typedef struct  nmap_data
 }   t_nmap_data;
 
 void    print_help(void);
+void    print_error(int code, ...);
 
 void    parse_args(int argc, char **argv,
                     t_nmap_data *data);
+void    validate_arguments(t_nmap_data *data);
 
 void    clean_exit(int exit_code);
 

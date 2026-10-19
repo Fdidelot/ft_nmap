@@ -7,7 +7,9 @@ PATH_HEAD	=	./headers/
 SRCS	=	main.c \
 			print.c \
 			exit.c \
-			parser.c
+			parser.c \
+			error.c \
+			arguments.c
 
 vpath %.c $(PATH_SRC)
 

@@ -2,11 +2,13 @@
 
 int main(int argc, char **argv)
 {
-    if (argc == 1)
-        print_help();
 
     t_nmap_data data = {0};
     parse_args(argc, argv, &data);
+
+    if (argc == 1 || data.options[OPT_HELP])
+        print_help();
+
 
     // DEBUG
     const char *options[] =
@@ -24,5 +26,7 @@ int main(int argc, char **argv)
         printf("%7s : %s\n", options[i], data.options[i] ? "True": "False");
     }
     // END DEBUG
+
+    validate_arguments(&data);
     return 0;
 }
